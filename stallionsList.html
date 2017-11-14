@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pole Horse World</title>
+    <!-- Bootstrap -->
+	<!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+	<link href="css/bootstrap-3.3.7.css" rel="stylesheet" type="text/css">
+	<link href="css/navStyle.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+  <section>
+  	<div class="modal fade" id="signInModal" role="dialog">
+ 		 <div class="modal-dialog">
+ 		 	
+ 		 	<!--MODAL CONTENT-->
+ 		 	<div class="modal-content">
+ 		 		<div class="modal-header">
+ 		 			<button type="button" class="close closeBtn" data-dismiss="modal">&times;</button>
+ 		 			<h4>Please Sign In</h4>
+ 		 		</div>
+ 		 		<div class="modal-body">
+ 		 			<div class="signInForm" id="userSignIn">
+	 				  <div class="container-fluid">
+	 				  	<form class="signInUserForm">
+    						<div class="form-group">
+        						<label for="inputEmail1">Username or Email: </label>
+        						<div class="media-right">
+        							<input type="email" class="form-control" id="inputEmail1" placeholder="Username or email">
+        						</div>
+    						</div>
+    						<div class="form-group">
+        						<label for="inputPassword1">Enter Password: &nbsp;</label>
+        						<div class="media-right">
+        							<input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+        						</div>
+    						</div>
+    						<div class="checkbox">
+        						<label>
+            						<input type="checkbox">Keep me signed in
+        						</label>
+    						</div>
+    						<a href=""><i class="fa fa-sign-in fa-2x" id="modalSignInBtn" aria-hidden="true"></i></a>
+						</form>
+	 				  </div>
+                    </div>
+ 		 		</div>
+ 		 		<div class="modal-footer">
+ 		 			<label><a href="">Forgot your username?</a></label>
+ 		 			<label><a href="">Forgot your password?</a></label>
+ 		 		</div>
+ 		 	</div>
+ 		 </div>
+  	</div>
+  	<div class="modal fade" id="makeAccountModal" role="dialog">
+ 	<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel">Please fill out the form <small>Anything with * next to it is required!</small></h3>
+		</div>
+		<div class="modal-body">
+			
+            <!-- content goes here -->
+			<form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">*First Name:</label>
+                &nbsp;
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter First Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">*Last Name:</label>
+                &nbsp;
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Last Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">*Email:</label>
+                &nbsp;
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">*Create a Username:</label>
+                &nbsp;
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Username">
+              </div>
+			  <div class="form-group">
+              <label for="exampleInputPassword1">*Repeat Password:</label>
+                &nbsp;
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repeat Password">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Sign up for email updates, event notifications, news, and much more!
+                </label>
+              </div>
+<!--CAPTCHA--------------------------------->
+ <script type="text/javascript">
+     var RecaptchaOptions = {
+        theme : 'custom',
+        custom_theme_widget: 'recaptcha_widget'
+     };
+</script>               
+
+<form method="post" action="<?php echo $base_url; ?>user/register/check" method="post" class="form-horizontal well" accept-charset="UTF-8">
+
+                    <script type="text/javascript">
+                         var RecaptchaOptions = {
+                            theme : 'custom',
+                            custom_theme_widget: 'recaptcha_widget'
+                         };
+                    </script>
+                    <div id="recaptcha_widget" style="display:none">
+
+                        <div class="control-group">
+                            <label class="control-label"></label>
+                            <div class="controls">
+                                <a id="recaptcha_image" href="#" class="thumbnail"></a>
+                                <div class="recaptcha_only_if_incorrect_sol" style="color:red">Incorrect please try again</div>
+                            </div>
+                        </div>
+
+                           <div class="control-group">
+                               <label class="recaptcha_only_if_image control-label">Enter the words above:</label>
+                              <label class="recaptcha_only_if_audio control-label">Enter the numbers you hear:</label>
+
+                              <div class="controls">
+                                  <div class="input-append">
+                                      <input type="text" id="recaptcha_response_field" name="recaptcha_response_field" class="input-recaptcha" />
+                                      <a class="btn" href="javascript:Recaptcha.reload()"><i class="icon-refresh"></i></a>
+                                      <a class="btn recaptcha_only_if_image" href="javascript:Recaptcha.switch_type('audio')"><i title="Get an audio CAPTCHA" class="icon-headphones"></i></a>
+                                      <a class="btn recaptcha_only_if_audio" href="javascript:Recaptcha.switch_type('image')"><i title="Get an image CAPTCHA" class="icon-picture"></i></a>
+                                    <a class="btn" href="javascript:Recaptcha.showhelp()"><i class="icon-question-sign"></i></a>
+                                  </div>
+                              </div>
+                        </div>
+
+                    </div>
+
+                    <script type="text/javascript"
+                       src="<?php echo $recaptcha_url; ?>">
+                    </script>
+
+                    <noscript>
+                        <iframe src="<?php echo $recaptcha_noscript_url; ?>"
+                           height="300" width="500" frameborder="0"></iframe><br>
+                        <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                        </textarea>
+                        <input type="hidden" name="recaptcha_response_field"
+                           value="manual_challenge">
+                      </noscript>
+</form>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcrK9cSAAAAALEcjG9gTRPbeA0yAVsKd8sBpFpR"></script>
+
+<noscript>
+    <iframe src="<?php echo $recaptcha_noscript_url; ?>"
+       height="300" width="500" frameborder="0"></iframe><br>
+    <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+    </textarea>
+    <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+</noscript>
+<!--END CAPTCHA----------------------------->
+              &nbsp;
+              <button type="submit" class="btn btn-block makeAcctBtn"><i class="fa fa-user-plus" aria-hidden="true"><p>Create Account</p></i></button>
+            </form>
+		</div>
+		<div class="modal-footer">
+			<div class="btn-group btn-group-justified" role="group" aria-label="group button">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+  	</div>
+  </section>
+  <section>
+  	<div class="logoWrapper">
+	  <div class="container-fluid logoWrap">
+	  	<div class="logoBrand">
+	    				<img src="images/logo.svg" class="img-responsive logo" alt="Placeholder image" style="width: 600px;" >
+      	</div>
+	  </div>
+    </div>
+  </section> 
+  <section>
+  <div class="wrap">
+  
+  <nav class="navbar navbar-default navSectionSkin">
+    <div class="containNav">
+<!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="container-fluid">
+      	      <!-- Brand and toggle get grouped for better mobile display -->
+      
+      <div class="navbar-header navHeadSty">
+      				<button type="button" class="navbar-toggle collapsed mnuBtnSty" data-toggle="collapse" data-target="#defaultNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+		<form class="navbar-form navbar-left" role="search">
+          	<div class="form-group">
+          		<button type="submit" class="btn btn-default srchBtnStyle" ><i class="fa fa-search" aria-hidden="true"></i></button>
+       			<input type="text" class="form-control searchSty" placeholder="Search">
+          	</div>
+      	</form>
+      	<div class="nav navbar-nav navbar-right moreStyle">
+      	  <ul  style="display: inline-block; list-style: none; float:right;">
+      	    <li> <a href="#" class="navbar-toggler" data-toggle="collapse" type="button" data-target="#navToggleExternal" aria-controls="navToggleExternal" aria-expanded="false" aria-label="Toggle navigation">More<i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a> </li>
+    	    </ul>
+      	</div>
+      </div>
+      	<div class="collapse navbar-collapse navStyle" id="defaultNavbar1">
+        	<ul class="nav navbar-nav navbar-right">
+          		<li><a href="index.html">Home</a></li>
+          		<li><a href="stallions.html">Stallions</a></li>
+         	 	<li><a href="#">Services</a></li>
+          		<li><a href="#">Message Board</a></li>
+          		<li>
+          		</li>
+        	</ul>
+      	</div>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <div class="collapse" id="navToggleExternal">
+  		<div class="containNavTop">
+  			<div class="row navRow">
+  				<div class="col-md-12">
+  					<ul class="navSecndry">
+  						<li class="navList">
+  							<a href="" id="userSignIn"  data-toggle="modal" data-target="#signInModal">
+  								<i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
+  								<p>User Sign In</p>
+  							</a>
+  							<a href="" id="makeAccount" data-toggle="modal" data-target="#makeAccountModal">
+  								<i class="fa fa-user-plus fa-lg" aria-hidden="true"></i>
+  								<p>Make Account</p>
+  							</a>
+  							<a href="" id="userSignOut" class="hidden">
+  								<i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
+  								<p>User Sign Out</p>
+  							</a>
+  							<a href="" id="listings">
+  								<i class="fa fa-file-text fa-lg" aria-hidden="true"></i>
+  								<p>Listings</p>
+  							</a>
+  							<a href="polehorses.html" id="poleHorseList">
+  								<i class="fa fa-tags fa-lg" aria-hidden="true"></i>
+  								<p>Pole Horses</p>
+  							</a>
+  							<a href="" id="placeAnAd">
+  								<i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+  								<p>Place an Ad</p>
+  							</a>
+  							<a href="" id="postISO">
+  								<i class="fa fa-file-o fa-lg" aria-hidden="true"></i>
+  								<p>Post ISO</p>
+  							</a>
+  							<a href="" id="poleRaces">
+  								<i class="fa fa-flag-checkered fa-lg" aria-hidden="true"></i>
+  								<p>Pole Races</p>
+  							</a>
+  							<a href="" id="events01">
+  								<i class="fa fa-calendar fa-lg" aria-hidden="true"></i>
+  								<p>Events</p>
+  							</a>
+  							<a href="" id="organizations">
+  								<i class="fa fa-group fa-lg" aria-hidden="true"></i>
+  								<p>Organizations</p>
+  							</a>
+  							<a href="" id="horseStories">
+  								<i class="fa fa-heart fa-lg" aria-hidden="true"></i>
+  								<p>Horse Stories</p>
+  							</a>
+  							<a href="" id="itemsAndGifts">
+  								<i class="fa fa-gift fa-lg" aria-hidden="true"></i>
+  								<p>Items & Gifts</p>
+  							</a>
+  							<a href="" id="stolenProperty">
+  								<i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i>
+  								<p>Stolen Property</p>
+  							</a>
+  						</li>
+  					</ul>
+  				</div>
+  			</div>
+  		</div>
+  </div>
+  </div>
+  </section>
+<section>
+  <div class="container-fluid">
+  	<div class="row">
+  	  <div class="col-lg-12">
+  	  	<div class="listHeader">
+  	  		<h2>Name Of Horse</h2>
+  		  <a href="stallions.html"><h5>See Entire Listings</h5></a>
+  	  			
+
+	    	  			
+		  <div class="optionalVideo center-block">
+  
+		  </div>
+        </div>
+  	  	<div class="listBody">
+  	  		<div class="container">          
+  					<table class="table-responsive">
+    					<tbody>
+      						<tr>
+        						<th>Name - Registered:</th>
+        						<td>Wonderland Lake</td>
+      						</tr>
+      						<tr>
+        						<th>Sire:</th>
+        						<td>Lake's a Wonder</td>
+      						</tr>
+      						<tr>
+        						<th>Dam:</th>
+        						<td>Wondering by the Lake, by Wonderland</td>
+      						</tr>
+      						<tr>
+        						<th>Sex:</th>
+        						<td>Stallion</td>
+      						</tr>
+      						<tr>
+        						<th>Age:</th>
+        						<td>8 Years Old</td>
+      						</tr>
+      						<tr>
+        						<th>Color:</th>
+        						<td>Palomino</td>
+      						</tr>
+      						<tr>
+        						<th>Price:</th>
+        						<td>$0000.00</td>
+      						</tr>
+      						<tr>
+        						<th>Height:</th>
+        						<td>14.5</td>
+      						</tr>
+      						<tr>
+        						<th>Location:</th>
+        						<td>Tulsa, OK</td>
+      						</tr>
+      						<tr>
+        						<th>Who to Contact:</th>
+        						<td>First Last Name</td>
+      						</tr>
+      						<tr>
+        						<th>Email:</th>
+        						<td>email@email.com</td>
+      						</tr>
+      						<tr>
+        						<th>Phone:</th>
+        						<td>(000) 000-0000</td>
+        						<td><a href=""><i class="fa fa-plus-square-o" aria-hidden="false"></i>Add to list</a></td>
+      						</tr>
+    					</tbody>
+  					</table>
+		  </div>
+  	  	</div>
+  	  </div>
+    </div>
+  </div>
+</section>
+  <section id="footerSection">
+	<div class="container-fluid footer" id="footerLayout">
+	<div class = "row" id="footerLinkStyle">
+		<div class="col-sm-4 footRightBorder" id="footerLinkListSty">
+		<ul id="footerLinkSkin">
+			<li><a href="">Services</a></li>
+			<li><a href="">Submit a Horse Story</a></li>
+			<li><a href="">N.P.B.A Organizations</a></li>
+			<li><a href="">Upcoming Events</a></li>
+			<li><a href="">Usability</a></li>
+			<li><a href="">Contact Us</a></li>
+		</ul>
+		</div>
+		<div class="col-sm-4 footRightBorder" id="footerLinkListSty">
+		<ul id="footerLinkSkin">
+			<h5>The community</h5>
+			<hr>
+			<li><a href="">Link to External Site</a></li>
+			<li><a href="">Link to External Site</a></li>
+			<li><a href="">Link to External Site</a></li>
+			<li><a href="">Link to External Site</a></li>
+			<li><a href="">Link to External Site</a></li>
+		</ul>
+		</div>
+	  	<div class="col-sm-4 contactSection" id="footerLinkListSty">
+			<ul id="footerLinkSkin">
+			<li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="">Make an Account</a></li>
+			<li><p>Already have an account?</p></li>
+			<li><em class="fa fa-sign-in" aria-hidden="true"></em><a href="">Sign In</a></li>
+			<li><p>Stolen horses or property?</p></li>
+			<li><em class="fa fa-exclamation" aria-hidden="true"></em><a href="">Report Stolen Property!</a></li>
+			<div class="navbar-right topRibbonText">
+	<h5 class="followUs">Follow us on social media</h5>
+	<ul>
+		<li><a href="#" class="fa fa-facebook"></a></li>
+		<li><a href="#" class="fa fa-google"></a></li>
+		<li><a href="#" class="fa fa-twitter"></a></li>
+		<li><a href="#" class="fa fa-instagram"></a></li>
+		<li><a href="#" class="fa fa-pinterest"></a></li>
+		<li><a href="#" class="fa fa-youtube"></a></li>
+	</ul>
+	</div>
+			</ul>	
+	  	</div>
+	</div>
+</div>
+<div>
+  <div class="container-fluid" id="adContainer">
+  <!--THIS IS WHERE AD WILL GO-->
+    <img src="images/adPlaceholder.jpg" class="img-responsive center-block" alt="Placeholder image"> 
+   
+  </div>
+</div>
+<div class="container-fluid" id="footerCopyrightTerms">
+  <div class="copyright" id="coprRightText"><p><i class="fa fa-copyright" aria-hidden="true"></i>2017 Pole Horse World. All Rights Reserved</p></div>
+</div>
+</section>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-1.11.3.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed --> 
+	<!-- <script src="js/bootstrap.js"></script> -->
+  <script src="js/bootstrap-3.3.7.js"></script>
+  <script src="js/retina.js"></script>
+  <script src="js/lightBox_Stallions.js"></script>
+</script>   
+</body>
+</html>
