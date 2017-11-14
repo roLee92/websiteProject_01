@@ -1,0 +1,74 @@
+@charset "utf-8";
+.media-body{
+	text-align: center;
+}
+.media-body h3{
+	color: #FFC72A;
+}
+
+.listItem{
+	height: 400px;
+}
+
+.pagination li a {
+	background: none!important;
+	border: none;
+	border-radius: 0px;
+	color: #FFC72A;
+}
+.pagination li a:hover {
+	color: #7F5D00;
+}
+
+.listHeader h2{
+	text-align: center;
+}
+.listHeader{
+	text-align: center;
+}
+.listHeader a{
+	color: #FFC72A;
+}
+.table-responsive a{
+	color: #FFC72A;
+}
+/*--List Carousel--------------------------*/
+
+.btnContainer h2 {
+	text-align: center;
+	padding: 20px;
+	
+}
+.btnCol a:hover{
+	text-decoration: none;
+}
+#feeders{
+	background: none;
+	transition: background .25s ease-in-out;
+   -moz-transition: background .25s ease-in-out;
+   -webkit-transition: background .25s ease-in-out;
+}
+#feeders:hover{
+	background: rgba(0,102,250,0.5);
+}
+#blanketRepair{
+	background: none;
+	transition: background .25s ease-in-out;
+   -moz-transition: background .25s ease-in-out;
+   -webkit-transition: background .25s ease-in-out;
+}
+#blanketRepair:hover{
+	background: rgba(254,197,62,0.5);
+}
+legend{
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: 600;
+	text-transform: uppercase;
+	background: #0D346A;
+}
+#pageTitle h1{
+	color: #FFC72A;
+	text-align: center;
+	text-transform: uppercase;
+}
